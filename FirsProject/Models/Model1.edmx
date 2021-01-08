@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PortfolioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Section1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="Profession" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Section2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Text" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Section3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Caption" Type="nvarchar" MaxLength="50" />
+          <Property Name="NumberGoal" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Section4">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Profession" Type="nvarchar" MaxLength="50" />
+          <Property Name="AboutPro" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Section5">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Section6">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number" Type="int" />
+          <Property Name="Text" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityContainer Name="PortfolioModelStoreContainer">
+          <EntitySet Name="Section1" EntityType="Self.Section1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Section2" EntityType="Self.Section2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Section3" EntityType="Self.Section3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Section4" EntityType="Self.Section4" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Section5" EntityType="Self.Section5" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Section6" EntityType="Self.Section6" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PortfolioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Section1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Profession" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Section2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Section3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NumberGoal" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Section4">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Profession" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AboutPro" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Section5">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Section6">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="Int32" />
+          <Property Name="Text" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="PortfolioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Section1" EntityType="Self.Section1" />
+          <EntitySet Name="Section2" EntityType="Self.Section2" />
+          <EntitySet Name="Section3" EntityType="Self.Section3" />
+          <EntitySet Name="Section4" EntityType="Self.Section4" />
+          <EntitySet Name="Section5" EntityType="Self.Section5" />
+          <EntitySet Name="Section6" EntityType="Self.Section6" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PortfolioModelStoreContainer" CdmEntityContainer="PortfolioEntities">
+          <EntitySetMapping Name="Section1">
+            <EntityTypeMapping TypeName="PortfolioModel.Section1">
+              <MappingFragment StoreEntitySet="Section1">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Profession" ColumnName="Profession" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Section2">
+            <EntityTypeMapping TypeName="PortfolioModel.Section2">
+              <MappingFragment StoreEntitySet="Section2">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Section3">
+            <EntityTypeMapping TypeName="PortfolioModel.Section3">
+              <MappingFragment StoreEntitySet="Section3">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="NumberGoal" ColumnName="NumberGoal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Section4">
+            <EntityTypeMapping TypeName="PortfolioModel.Section4">
+              <MappingFragment StoreEntitySet="Section4">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Profession" ColumnName="Profession" />
+                <ScalarProperty Name="AboutPro" ColumnName="AboutPro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Section5">
+            <EntityTypeMapping TypeName="PortfolioModel.Section5">
+              <MappingFragment StoreEntitySet="Section5">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Section6">
+            <EntityTypeMapping TypeName="PortfolioModel.Section6">
+              <MappingFragment StoreEntitySet="Section6">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PortfolioModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

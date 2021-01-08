@@ -1,0 +1,202 @@
+﻿@using FirsProject.Models;
+
+    <div id="hero" class="hero">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <h1>@ViewBag.section1.Name</h1>
+                    <div class="page-scroll">
+                        <p class="job-title">@ViewBag.section1.Profession</p>
+                        <a href="#contact" class="btn btn-fill ">Hire me</a>
+                        <div class="clearfix visible-xxs"></div>
+                        <a href="#portfolio" class="btn btn-border">Explore more</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 text-right">
+                    <img src="@ViewBag.section1.ImageUrl" alt="alex-vidal">
+                </div>
+
+            </div>
+        </div>
+    </div><!-- /.hero -->
+
+    <main id="main" class="site-main">
+
+        <section id="about" class="site-section section-about text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <h2>About</h2>
+                        <img src="~/Frontsite/assets/img/lines.svg" class="img-lines" alt="lines">
+                        <p>@ViewBag.section2.Text</p>
+                        <a href="http://www.grad.illinois.edu/sites/default/files/pdfs/cvsamples.pdf" class="btn btn-fill" target="_blank" download>Download my cv</a>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /.secton-about -->
+
+        <section class="site-section section-skills">
+            <div class="container">
+                <div class="text-center">
+                    <h3>My Skills</h3>
+                    <img src="~/Frontsite/assets/img/lines.svg" class="img-lines" alt="lines">
+                </div>
+                <div class="row">
+                    @foreach (Section3 item in ViewBag.section3)
+                    {
+                    <div class="col-md-4">
+                        <div class="skill">
+                            <h4>@item.Caption</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-transitiongoal="@item.NumberGoal"></div><!-- /.progress-bar -->
+                            </div><!-- /.progress -->
+                        </div><!-- /.skill -->
+                    </div>
+                        }
+
+                        
+                    </div>
+            </div>
+        </section><!-- /.secton-skills -->
+
+        <section id="service" class="site-section section-services overlay text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>What i do</h3>
+                        <img src="~/Frontsite/assets/img/lines.svg" class="img-lines" alt="lines">
+                    </div>
+                    @foreach (Section4 item in ViewBag.section4)
+                    {
+                        <div class="col-sm-4">
+                            <div class="service">
+                                <img src="~/Frontsite/assets/img/front-end.svg" alt="Front End Developer">
+                                <h4>@item.Profession</h4>
+                                <p> @item.AboutPro</p>
+                            </div><!-- /.service -->
+                        </div>
+                    }
+                    <!-- /.service -->
+                </div>
+                </div>
+        </section><!-- /.secton-services -->
+
+        <section id="portfolio" class="site-section section-portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h3>My recent Works</h3>
+                    <img src="~/Frontsite/assets/img/lines.svg" class="img-lines" alt="lines">
+                </div>
+                <div class="row">
+                    @foreach (Section5 item in ViewBag.section5)
+                    {
+                        <div class="col-md-4 col-xs-6">
+                            <div class="portfolio-item">
+                                <img src="@item.ImageUrl" class="img-res" alt="">
+                                <div class="portfolio-item-info">
+                                    <h4>@item.Title</h4>
+                                    <a href="#" data-toggle="modal" data-target="#portfolioItem1"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                    <a href="#"><span class="glyphicon glyphicon-link"></span></a>
+                                </div><!-- /.portfolio-item-info -->
+                            </div><!-- /.portfolio-item -->
+                        </div>
+                    }
+                </div>
+            </div>
+        </section><!-- /.secton-portfolio -->
+
+        <section class="site-section section-counters text-center">
+            <div class="container">
+                <div class="row">
+                    @foreach (Section6 item in ViewBag.section6)
+                    {
+                        <div class="col-sm-4 col-xs-12">
+                            <p class="counter start" data-to="@item.Number" data-speed="2000">0</p>
+                            <h4>@item.Text</h4>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section><!-- /.section-counters -->
+
+        <section id="contact" class="site-section section-form text-center">
+            <div class="container">
+
+                <h3>Contact</h3>
+                <img src="~/Frontsite/assets/img/lines.svg" class="img-lines" alt="lines">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="text" name="name" class="form-control mt-x-0" placeholder="Name" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="col-sm-12">
+                            <textarea name="message" id="mesaage" class="form-control" placeholder="Message" required></textarea>
+                        </div>
+                    </div>
+                    <button href="#" class="btn btn-border" type="submit">Hire Me <span class="glyphicon glyphicon-send"></span></button>
+                </form>
+            </div>
+        </section><!-- /.section-form -->
+
+    </main><!-- /#main -->
+
+    <!-- Modals -->
+    <div id="portfolioItem1" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+                    <img class="img-res" src="~/Frontsite/assets/img/portfolio-1.jpg" alt="">
+                </div>
+                <div class="modal-body">
+                    <h4 class="modal-title">Project title</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-fill">Visit Page</a>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="portfolioItem2" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+                    <img class="img-res" src="~/Frontsite/assets/img/portfolio-2.jpg" alt="">
+                </div>
+                <div class="modal-body">
+                    <h4 class="modal-title">Project title</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-fill">Visit Page</a>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <div id="portfolioItem6" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+                    <img class="img-res" src="~/Frontsite/assets/img/portfolio-6.jpg" alt="">
+                </div>
+                <div class="modal-body">
+                    <h4 class="modal-title">Project title</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-fill">Visit Page</a>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
